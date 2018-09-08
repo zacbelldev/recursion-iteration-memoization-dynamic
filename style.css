@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Electrolize");
+* {
+    color: white;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #ffc220;
+}
+
+button {
+    background-color: #acacac;
+    min-width: 100px;
+    min-height: 30px;
+    border-radius: 5px;
+}
+
+body {
+  padding: 30px;
+  background-color: #004c91;
+}
+
+h1 {
+  font-size: 2em;
+  font-family: "Electrolize", sans-serif;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+input[type="number"] {
+    width: 60px;
+    color: black;
+}
+
+#output {
+  margin: 10px 0;
+  width: 100px;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5em;
+  border: 2px solid black;
+}
