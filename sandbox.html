@@ -25,26 +25,47 @@
         <h4>Output:</h4>
         <div id="output"></div>
         <br><hr>
-        <h4>Iterative Code:</h4>
+        <h4>Recursion Code:</h4>
         <pre>
-function fibonacci(num) {
-    // iteration method
-    var a = 0, b = 1, f = 1;
-    var s = &#x22;1, &#x22;;
+function recursion_fibonacci(num) {
+    if (num &#x3C; 0)
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        &#x22;Error&#x22;);
+    else if (num &#x3C; 2)
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        num);
+    else
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        recursion_fibonacci(num - 1) + recursion_fibonacci(num - 2));
+}
+        </pre>
+        <hr>
+        <h4>Iteration Code:</h4>
+        <pre>
+function iteration_fibonacci(num) {
+    var a = 0,
+        b = 1,
+        f = 1;
     for (var i = 2; i &#x3C;= num; i++) {
         f = a + b;
         a = b;
         b = f;
-        s += f + &#x22;, &#x22;;
     }
     if (num &#x3C; 0)
-        return ;
-    else if (num == 0)
-        return 0;
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        &#x22;Error&#x22;);
+    else if (num &#x3C; 2)
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        num);
     else
-        return (document.getElementById(&#x22;iterative-output&#x22;)
-        .innerHTML = s.replace(/,\s*$/, &#x22;&#x22;));
+        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
+        f);
 }
+        </pre>
+        <hr>
+        <h4>Memoization Code:</h4>
+        <pre>
+
         </pre>
     </div>
     <script src="sandbox.js"></script>
