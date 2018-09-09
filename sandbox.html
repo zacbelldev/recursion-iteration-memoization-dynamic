@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Recursion/Iteration/Memoizatoin</title>
+    <title>Recursion/Iteration/Memoization</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body class="container">
-<!--    <h1>Coding Challenge</h1>-->
-<!--    <h2>Recursion, Iteration, Dynamic Programming, Seeding</h2>-->
-<!--    <h3>Goal: use above concepts to print fibonacci sequence...</h3>-->
+        <h1>Coding Challenge</h1>
+    <!--    <h2>Recursion, Iteration, Dynamic Programming, Seeding</h2>-->
+    <!--    <h3>Goal: use above concepts to print fibonacci sequence...</h3>-->
     <br/><span>Enter Number:&nbsp;&nbsp;</span>
-    <input type="number" id="input"/><br/>
-    <p>e.g. 4 --> (1, 1, 2, 3, 5, 8)</p><br/>
-    <button onclick="fibonacci(document.getElementById('input').value)">Calculate</button>
-    <h4>Output:</h4>
-    <div id="output"></div>
+    <input type="number" id="input" /><br/>
+    <p>e.g. Enter 10 --> The first 10 values are printed (1, 1, 2, 3, 5, 8, 13, 21, 34, 55)</p><br/>
+    <button onclick="recursion_fibonacci(document.getElementById('input').value)">Recursion</button>
+    <button onclick="iteration_fibonacci(document.getElementById('input').value)">Iteration</button>
+    <button onclick="memoization_fibonacci(document.getElementById('input').value)">Memoization</button>
+
+    <div class="iterative">
+        <h4>Output:</h4>
+        <div id="output"></div>
+        <br><hr>
+        <h4>Iterative Code:</h4>
+        <pre>
+function fibonacci(num) {
+    // iteration method
+    var a = 0, b = 1, f = 1;
+    var s = &#x22;1, &#x22;;
+    for (var i = 2; i &#x3C;= num; i++) {
+        f = a + b;
+        a = b;
+        b = f;
+        s += f + &#x22;, &#x22;;
+    }
+    if (num &#x3C; 0)
+        return ;
+    else if (num == 0)
+        return 0;
+    else
+        return (document.getElementById(&#x22;iterative-output&#x22;)
+        .innerHTML = s.replace(/,\s*$/, &#x22;&#x22;));
+}
+        </pre>
+    </div>
     <script src="sandbox.js"></script>
 </body>
+
 </html>

@@ -2,7 +2,13 @@
 * {
     color: white;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #ffc220;
 }
 
@@ -11,16 +17,17 @@ button {
     min-width: 100px;
     min-height: 30px;
     border-radius: 5px;
+    margin: 0 15px 0 0;
 }
 
 body {
-  padding: 30px;
-  background-color: #004c91;
+    padding: 30px;
+    background-color: #004c91;
 }
 
 h1 {
-  font-size: 2em;
-  font-family: "Electrolize", sans-serif;
+    font-size: 2em;
+    font-family: "Electrolize", sans-serif;
 }
 
 h4 {
@@ -33,10 +40,15 @@ input[type="number"] {
 }
 
 #output {
-  margin: 10px 0;
-  width: 100px;
-  text-align: center;
-  padding: 20px;
-  font-size: 1.5em;
-  border: 2px solid black;
+    margin: 10px 0;
+    width: 315px;
+    min-height: 50px;
+    max-height: 100px;
+    text-align: left;
+    padding: 10px;
+    overflow: scroll;
+    background-color: aliceblue;
+    color: black;
+    -webkit-box-shadow: 0 0 20px 2px #00000059;
+    box-shadow: -1px -1px 10px 2px #00000059; 
 }
