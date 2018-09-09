@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Electrolize");
+
 * {
     color: white;
 }
 
+strong,
 h1,
 h2,
 h3,
@@ -17,7 +19,7 @@ button {
     min-width: 100px;
     min-height: 30px;
     border-radius: 5px;
-    margin: 0 15px 0 0;
+    margin: 15px 15px 0 0;
 }
 
 body {
