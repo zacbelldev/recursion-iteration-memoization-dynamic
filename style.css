@@ -4,6 +4,11 @@
     color: white;
 }
 
+body {
+    padding: 30px;
+    background-color: #004c91;
+}
+
 strong,
 h1,
 h2,
@@ -14,26 +19,21 @@ h6 {
     color: #ffc220;
 }
 
+h1 {
+  font-size: 3.3em;
+  font-family: "Electrolize", sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
 button {
     background-color: #acacac;
     min-width: 100px;
     min-height: 30px;
     border-radius: 5px;
     margin: 15px 15px 0 0;
-}
-
-body {
-    padding: 30px;
-    background-color: #004c91;
-}
-
-h1 {
-    font-size: 2em;
-    font-family: "Electrolize", sans-serif;
-}
-
-h4 {
-    margin-bottom: 0;
 }
 
 input[type="number"] {
