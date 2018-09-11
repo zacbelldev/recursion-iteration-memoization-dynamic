@@ -1,10 +1,14 @@
+var resultDiv = document.getElementById("output");
+//var durationDiv = document.getElementById("outputTime");
+
 function recursion_fibonacci(num) {
-    if (num < 0 || num == "")
-        return (document.getElementById("output").innerHTML = "Input is blank or negative.");
-    else if (num < 2)
-        return (document.getElementById("output").innerHTML = num);
-    else
-        return (document.getElementById("output").innerHTML = recursion_fibonacci(num - 1) + recursion_fibonacci(num - 2));
+    
+    if (num < 2) { 
+        return (resultDiv.innerHTML = num); 
+    } else {
+        var result = recursion_fibonacci(num - 1) + recursion_fibonacci(num - 2);        
+        return (resultDiv.innerHTML = result);
+    }
 }
 
 function iteration_fibonacci(num) {
@@ -16,35 +20,19 @@ function iteration_fibonacci(num) {
         a = b;
         b = f;
     }
-    if (num < 0 || num == "")
-        return (document.getElementById("output").innerHTML = "Input is blank or negative.");
-    else if (num < 2)
-        return (document.getElementById("output").innerHTML = num);
+    if (num < 2)
+        return (resultDiv.innerHTML = num);
     else
-        return (document.getElementById("output").innerHTML = f);
+        return (resultDiv.innerHTML = f);
 }
 
+function memoization_fibonacci(num, memo) {
+    memo = memo || {};
 
-
-var fibonacci = (function() {
-  var memo = {};
-
-  function f(n) {
-    var value;
-
-    if (n in memo) {
-      value = memo[n];
-    } else {
-      if (n === 0 || n === 1)
-        value = n;
-      else
-        value = f(n - 1) + f(n - 2);
-
-      memo[n] = value;
-    }
-
-    return value;
-  }
-
-  return f;
-})();
+    if (memo[num]) return memo[num];
+    
+    if (num < 2)
+        return (resultDiv.innerHTML = num);
+    else
+        return (resultDiv.innerHTML = memo[num] = memoization_fibonacci(num - 1, memo) + memoization_fibonacci(num - 2, memo));
+}

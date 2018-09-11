@@ -11,37 +11,41 @@
 </head>
 
 <body class="container">
-        <h1>Coding Challenge</h1>
+    <h1>Coding Challenge</h1>
     <!--    <h2>Recursion, Iteration, Dynamic Programming, Seeding</h2>-->
     <!--    <h3>Goal: use above concepts to print fibonacci sequence...</h3>-->
     <br/><span>Enter Number:&nbsp;&nbsp;</span>
-    <input type="number" id="input" /><br/>
+    <input type="number" id="input" min="0"><br/>
     <p>e.g. Enter 10 --> 55... (1, 1, 2, 3, 5, 8, 13, 21, 34, <strong>55</strong>)</p><br/>
     <button onclick="recursion_fibonacci(document.getElementById('input').value)">Recursion</button>
     <button onclick="iteration_fibonacci(document.getElementById('input').value)">Iteration</button>
     <button onclick="memoization_fibonacci(document.getElementById('input').value)">Memoization</button>
 
-    <div class="iterative">
-        <h4>Output:</h4>
-        <div id="output"></div>
-        <br><hr>
-        <h4>Recursion Code:</h4>
-        <pre>
+
+    <h4>Output:</h4>
+    <div id="output"></div>
+    <!--
+    <h4>Execution Time:</h4>
+    <div id="outputTime"></div>
+-->
+    <br>
+    <hr>
+    <h4>Recursion Code:</h4>
+    <pre>
 function recursion_fibonacci(num) {
-    if (num &#x3C; 0)
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        &#x22;Error&#x22;);
-    else if (num &#x3C; 2)
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        num);
-    else
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        recursion_fibonacci(num - 1) + recursion_fibonacci(num - 2));
+    
+    if (num &#x3C; 2) { 
+        return (resultDiv.innerHTML = num); 
+    } else {
+        var result = recursion_fibonacci(num - 1) + 
+        recursion_fibonacci(num - 2);        
+        return (resultDiv.innerHTML = result);
+    }
 }
-        </pre>
-        <hr>
-        <h4>Iteration Code:</h4>
-        <pre>
+    </pre>
+    <hr>
+    <h4>Iteration Code:</h4>
+    <pre>
 function iteration_fibonacci(num) {
     var a = 0,
         b = 1,
@@ -51,23 +55,30 @@ function iteration_fibonacci(num) {
         a = b;
         b = f;
     }
-    if (num &#x3C; 0)
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        &#x22;Error&#x22;);
-    else if (num &#x3C; 2)
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        num);
+    if (num &#x3C; 2)
+        return (resultDiv.innerHTML = num);
     else
-        return (document.getElementById(&#x22;output&#x22;).innerHTML = 
-        f);
+        return (resultDiv.innerHTML = f);
 }
-        </pre>
-        <hr>
-        <h4>Memoization Code:</h4>
-        <pre>
+    </pre>
+    <hr>
+    <h4>Memoization Code:</h4>
+    <pre>
+function memoization_fibonacci(num, memo) {
+    memo = memo || {};
 
-        </pre>
-    </div>
+    if (memo[num]) return memo[num];
+    
+    if (num &#x3C; 2)
+        return (resultDiv.innerHTML = num);
+    else
+        return (resultDiv.innerHTML = 
+        memo[num] = 
+        memoization_fibonacci(num - 1, memo) + 
+        memoization_fibonacci(num - 2, memo));
+}
+    </pre>
+
     <script src="sandbox.js"></script>
 </body>
 

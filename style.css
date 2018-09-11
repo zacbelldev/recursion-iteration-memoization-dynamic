@@ -41,7 +41,8 @@ input[type="number"] {
     color: black;
 }
 
-#output {
+#output,
+#outputTime {
     margin: 10px 0;
     width: 315px;
     min-height: 50px;
